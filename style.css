@@ -1,0 +1,421 @@
+.color-change {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.color-change:hover {
+    background-color: #f44336;
+}
+
+.color-change {
+    color: #4CAF50;
+    /* Initial color */
+    transition: color 0.3s ease;
+    /* Smooth transition for color property */
+}
+
+.color-change:hover {
+    color: #f44336;
+    /* Color changes on hover */
+}
+
+.scale-box {
+    transform: scale(1);
+    /* Element is at its normal size */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for the transform property */
+}
+
+.scale-box:hover {
+    transform: scale(1.1);
+    /* Element scales up by 10% on hover */
+}
+
+.zoom-background {
+    width: 200px;
+    height: 200px;
+    background-image: url("https://edube.org/uploads/media/default/0001/03/sunflowers_sunset_full.jpg");
+    background-size: cover;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for the transform property */
+}
+
+.zoom-background:hover {
+    transform: scale(1.1);
+    /* Image zooms in on hover */
+}
+
+.rotate-icon {
+    display: inline-block;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for the transform property */
+}
+
+.rotate-icon:hover {
+    transform: rotate(180deg);
+    /* Icon rotates 180 degrees on hover */
+}
+
+.gallery-image {
+    width: 200px;
+    height: 200px;
+    background-image: url("https://edube.org/uploads/media/default/0001/03/sunflowers_sunset_full.jpg");
+    background-size: cover;
+    opacity: 0.7;
+    /* Initial reduced opacity */
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth transition for the opacity property */
+}
+
+.gallery-image:hover {
+    opacity: 1;
+    /* Full opacity on hover */
+}
+
+.input-highlight {
+    padding: 10px;
+    border: 2px solid #ccc;
+    /* Default border color */
+    transition: border-color 0.3s ease-in-out;
+    /* Transition effect for the border color */
+}
+
+.input-highlight:focus {
+    border-color: #4CAF50;
+    /* Highlight color when the input field is focused */
+}
+
+/* Hide the actual checkbox, but it's still functional */
+.modal-state {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    visibility: hidden;
+    /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When checkbox is checked, display the modal overlay and box */
+.modal-state:checked+.modal-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Transition for the modal box */
+    transform: translateY(-50px);
+    /* Start slightly above its natural position */
+    transition: transform 0.5s ease-out;
+}
+
+.modal-state:checked+.modal-overlay .modal-box {
+    transform: translateY(0);
+    /* Move to its natural position */
+}
+
+/* Style for open and close buttons */
+.modal-open-button,
+.modal-close-button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal-close-button:hover,
+.modal-open-button:hover {
+    background-color: #367B48;
+}
+
+/* Hide the actual checkbox, but it's still functional */
+.toggle-input {
+    display: none;
+}
+
+/* Style for the label which acts as a toggle button */
+.toggle-label {
+    cursor: pointer;
+    /* Additional styling for label (size, position, etc.) */
+}
+
+.side-panel {
+    transform: translateX(-100%);
+    /* Panel is initially off-screen */
+    transition: transform 0.5s ease-in-out;
+    /* Additional styling for the panel (width, height, background, etc.) */
+}
+
+/* When checkbox is checked, move the panel into view */
+.toggle-input:checked+.side-panel {
+    transform: translateX(0);
+    /* Slide in the panel */
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* Additional styling for the dropdown (positioning, background, etc.) */
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    /* Fade in the dropdown content */
+}
+
+.accordion-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.accordion-header {
+    background-color: #367B48;
+    cursor: pointer;
+    /* Change cursor to pointer to indicate this is clickable */
+}
+
+.accordion-content {
+    display: none;
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* Smooth transition for expanding and collapsing */
+    max-height: 0;
+    /* Start with max-height 0 */
+}
+
+.accordion-header:focus+.accordion-content {
+    display: block;
+    /* Show content when the header is clicked */
+    max-height: 500px;
+    /* Maximum height when expanded */
+}
+
+/* Define the keyframes for rotating animation */
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply the animation to your element */
+.rotating-element {
+    display: inline-block;
+    /* or block, depending on your layout */
+    width: 100px;
+    /* Width of the element */
+    height: 100px;
+    /* Height of the element */
+    background-color: #4CAF50;
+    /* Background color of the element */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Align text in the center */
+    line-height: 100px;
+    /* Align text vertically */
+
+    animation-name: rotateAnimation;
+    /* Reference the name of your keyframes */
+    animation-duration: 2s;
+    /* Set the duration of one animation cycle */
+    animation-timing-function: linear;
+    /* Define a steady pace for the animation */
+    animation-iteration-count: infinite;
+    /* Repeat the animation indefinitely */
+}
+
+/* Define the keyframes for fading animation */
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+        /* Start with the element invisible */
+    }
+
+    to {
+        opacity: 1;
+        /* Fade the element to fully visible */
+    }
+}
+
+/* Apply the animation to your element */
+.fading-element {
+    display: inline-block;
+    /* or block, depending on your layout */
+    width: 200px;
+    /* Width of the element */
+    height: 50px;
+    /* Height of the element */
+    background-color: #4CAF50;
+    /* Background color of the element */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Align text in the center */
+    line-height: 50px;
+    /* Align text vertically */
+
+    animation-name: fadeAnimation;
+    /* Reference the name of your keyframes */
+    animation-duration: 3s;
+    /* Set the duration of one animation cycle */
+    animation-timing-function: ease-in-out;
+    /* Gradual acceleration at the start and deceleration at the end */
+    animation-iteration-count: 1;
+    /* Run the animation only once */
+}
+
+/* Define the keyframes for sliding animation */
+@keyframes slideAnimation {
+    from {
+        transform: translateX(-100%);
+        /* Start off-screen to the left */
+    }
+
+    to {
+        transform: translateX(0);
+        /* End at the element's original position */
+    }
+}
+
+/* Apply the animation to your element */
+.sliding-element {
+    display: inline-block;
+    /* or block, depending on your layout */
+    width: 200px;
+    /* Width of the element */
+    height: 50px;
+    /* Height of the element */
+    background-color: #f44336;
+    /* Background color of the element */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Align text in the center */
+    line-height: 50px;
+    /* Align text vertically */
+    position: relative;
+    /* Required for the translateX function to work correctly */
+
+    animation-name: slideAnimation;
+    /* Reference the name of your keyframes */
+    animation-duration: 2s;
+    /* Set the duration of one animation cycle */
+    animation-timing-function: ease-out;
+    /* Start fast and decelerate smoothly */
+    animation-iteration-count: 1;
+    /* Run the animation only once */
+}
+
+/* Define the keyframes for bouncing animation */
+@keyframes bounceAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Apply the animation to your element */
+.bouncing-element {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+
+    animation-name: bounceAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Define the keyframes for scaling animation */
+@keyframes scaleAnimation {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Apply the animation to your element */
+.scaling-element {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+
+    animation-name: scaleAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Define the typing animation */
+@keyframes typingAnimation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Apply the animation to a text container */
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typingAnimation 3s steps(30, end) infinite;
+    /* Type out text */
+}
